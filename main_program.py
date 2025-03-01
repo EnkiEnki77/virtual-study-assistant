@@ -1,3 +1,5 @@
+# Write your code here >>>
+
 # Stage 1 objectives:
 # 1. Allow users to input their study subjects and the time in minutes for each subject
 # 2. Ask user if theyd like to add another subject. If not, stop reading input, else continue reading.
@@ -10,50 +12,58 @@ def main():
 
     # Dict that will hold info about all the subjects of our study plan
     subjects = {}
+    study_plan = """\nYour study plan: \n"""
+    total_study_time = 0
 
     # Loop that will continuously prompt for a new subject until the flag is set to False, breaking the
     # loop.
     flag = True
     while flag:
         # Input prompts for a subject and time allotted for studying said subject.
-        subject = input("Enter a subject name: ")
-        allotted_time_for_subject = input("Enter an alotted time for subject in minutes: ")
-
-        # Loop that continuously runs until a valid input type of integer is given for allotted
-        # time
+        subject = input("""Enter subject name: """)
+        if subject == "":
+            if subjects:
+                print(study_plan)
+                break
+            else:
+                break
         integer_input_given = False
         while not integer_input_given:
-            # Checks to see if allotted time input was a digit, and breaks the loop if it is.
+            allotted_time_for_subject = input(f"Enter time allocated for {subject}: ")
+
             if allotted_time_for_subject.isdigit():
+                # Save subject in subjects dictionary
+                subjects[subject] = int(allotted_time_for_subject)
                 integer_input_given = True
-            # Informs user of invalid input, and prompts for new input.
+
+        # total_study_time = 0
+        study_time_including_breaks = 0
+        study_plan = """\nYour study plan: \n"""
+
+        # Loop through subjects dictionary full of users subject data
+        for i, subject in enumerate(subjects):
+            # Check if last subject in dict. If so, add last subject's info to study_plan as well
+            # as total study time and study time with breaks.
+            if i == len(subjects) - 1:
+                total_study_time += int(subjects[subject])
+                study_time_including_breaks = total_study_time + (total_study_time // 45) * 15
+                study_plan += f"{subject}: {subjects[subject]} minutes\n"
+                study_plan += f"Total study time: {total_study_time} minutes\n"
+                study_plan += f"Total time including breaks: {study_time_including_breaks} minutes\n"
             else:
-                print("Input not valid. Please enter an integer...")
-                allotted_time_for_subject = input("Enter an allotted time for subject in minutes: ")
+                total_study_time += int(subjects[subject])
+                study_plan += f"{subject}: {subjects[subject]} minutes\n"
 
-        # Save subject in subjects dictionary
-        subjects[subject] = int(allotted_time_for_subject)
+        print(study_plan)
 
-        # Print current state of subjects dictionary
-        print(subjects)
+        time_spent_studying = int(input("Enter time spent studying: "))
+        if time_spent_studying:
+            print(
+                f"You have completed {(time_spent_studying / total_study_time * 100):.2f}% of your planned study time.")
 
-        # Loop that ensures user is prompted again if incorrect input is given for question below
-        gave_yes_or_no = False
-        while not gave_yes_or_no:
-            # Ask user if theyd like to enter another subject or not.
-            add_another_subject = input("Add another subject? (yes/no): ")
 
-            # Checks if input was valid or not.
-            if add_another_subject.lower() == "no" or add_another_subject.lower() == "yes":
-                # If users answer was no, break main loop
-                if add_another_subject.lower() == "no":
-                    flag = False
-                # Otherwise, break this loop so user can be prompted for another subject
-                gave_yes_or_no = True
-            else:
-                # Inform user of invalid input and prompt for proper input
-                print("Input not valid. Please enter yes or no...")
-                add_another_subject = input("Add another subject? (yes/no): ")
+
+
 
 if __name__ == "__main__":
     main()
