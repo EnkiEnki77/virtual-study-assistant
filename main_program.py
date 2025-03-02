@@ -61,7 +61,7 @@ def main():
 
         print(study_plan)
 
-    if total_study_time > 0:
+    if total_study_time > 1:
         time_spent_studying = int(input("Enter time spent studying: "))
         print(f"You have completed {((time_spent_studying / total_study_time) * 100) if time_spent_studying <= total_study_time else 100.00:.2f}% of your planned study time.\n")
 

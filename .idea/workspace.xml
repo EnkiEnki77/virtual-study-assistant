@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4faefaa4-d60b-44a7-a4f5-51b2ed32a13c" name="Changes" comment="refactored project">
+    <list default="true" id="4faefaa4-d60b-44a7-a4f5-51b2ed32a13c" name="Changes" comment="Added functionality that asks user to input total time studied, then calculates and outputs percentage of allocated study time for each subject they completed.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_program.py" beforeDir="false" afterPath="$PROJECT_DIR$/main_program.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +76,7 @@
       <updated>1740644268318</updated>
       <workItem from="1740644269342" duration="3849000" />
       <workItem from="1740649165274" duration="95000" />
-      <workItem from="1740806960415" duration="1040000" />
+      <workItem from="1740806960415" duration="2093000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -119,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740806995450</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added functionality that asks user to input total time studied, then calculates and outputs percentage of allocated study time for each subject they completed.">
+      <option name="closed" value="true" />
+      <created>1740822976568</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1740822976568</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,7 +138,8 @@
     <MESSAGE value="Added functionality to prompt users for an answer on whether theyd like to enter another subject or not, along with a loop that informs them of improper input and continues to prompt until they give proper input" />
     <MESSAGE value="idk" />
     <MESSAGE value="refactored project" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored project" />
+    <MESSAGE value="Added functionality that asks user to input total time studied, then calculates and outputs percentage of allocated study time for each subject they completed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added functionality that asks user to input total time studied, then calculates and outputs percentage of allocated study time for each subject they completed." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/virtual_study_assistant$main_program.coverage" NAME="main_program Coverage Results" MODIFIED="1740647219083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
